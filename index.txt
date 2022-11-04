@@ -13,4 +13,5 @@ Comando uteis para o GitHub (git já instalado)
     git commit -m "comentários sobre versão"    //confirmas as alterações e prepara o arquivo para ser enviado para o repositório
     git remote add origin ...                   //adiciona o repositorio criado (endereço nos 3 pontinhos, no meu caso foi gabrieldelagustinhi/meuReset.git)
     git branch -M main                          //renomea a branch para main
-    git push -u origin main                     //
+    git push -u origin main                     //envia os documentos para o o git
+    
