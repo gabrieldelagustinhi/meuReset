@@ -1,0 +1,16 @@
+Esse é o primeiro arquivo que foi subido para o GitHub, como teste.
+
+Se este lendo isso no GitHub, é por funcionou :)
+
+    Abrir o code dentro da paste pelo terminal  - code .
+
+Comando uteis para o GitHub (git já instalado)
+    git init                                    //cria um novo repositorio na pasta
+    git status                                  //lista o que está no projeto              
+    git add ...                                 //adiciona o arquivo (substirui o ... pelo nome do arquivo) ao seu repositório local e o prepara para confirmação.
+    git add .                                   //faz igual ao git add mas adiciona todos os itens do repositório local
+    git reset                                   //cancela o prepado de um arquivo, 
+    git commit -m "comentários sobre versão"    //confirmas as alterações e prepara o arquivo para ser enviado para o repositório
+    git remote add origin ...                   //adiciona o repositorio criado (endereço nos 3 pontinhos, no meu caso foi gabrieldelagustinhi/meuReset.git)
+    git branch -M main                          //renomea a branch para main
+    git push -u origin main                     //
