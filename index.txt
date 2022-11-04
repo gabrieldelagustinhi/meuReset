@@ -4,7 +4,7 @@ Se este lendo isso no GitHub, é por funcionou :)
 
     Abrir o code dentro da paste pelo terminal  - code .
 
-Comando uteis para o GitHub (git já instalado)
+Comando uteis para o GitHub (git já instalado, utilizando o terminal bash)
     git init                                    //cria um novo repositorio na pasta
     git status                                  //lista o que está no projeto              
     git add ...                                 //adiciona o arquivo (substirui o ... pelo nome do arquivo) ao seu repositório local e o prepara para confirmação.
@@ -14,4 +14,8 @@ Comando uteis para o GitHub (git já instalado)
     git remote add origin ...                   //adiciona o repositorio criado (endereço nos 3 pontinhos, no meu caso foi gabrieldelagustinhi/meuReset.git)
     git branch -M main                          //renomea a branch para main
     git push -u origin main                     //envia os documentos para o o git
-    
+
+Comandos uteis para o cypress (utilizando o temrinal shell)
+    npm init -y                                 //usado para configurar um novo pacote npm ou existente             
+    npm install cypress                         //intala o cypress
+    npx cypress open                            //inicia o cypress - Depois de intalados, só usa esse
