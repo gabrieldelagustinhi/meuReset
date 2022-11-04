@@ -1,0 +1,14 @@
+# Ignore os arquivos dentro de /Desafios/node_modules
+/desafios/node_modules/*
+
+# Ignore os arquivos \Desafios\cypress\fixtures
+/desafios/cypress/fixtures
+
+# Ignore os arquivos \Desafios\cypress\support
+/desafios/cypress/support
+
+# Ignore os arquivos \Desafios\cypress\e2e\1-getting-started
+/desafios/cypress/e2e/1-getting-started
+
+# Ignore os arquivos \Desafios\cypress\e2e\2-advanced-examples
+/desafios/cypress/e2e/2-advanced-examples
