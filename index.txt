@@ -19,3 +19,13 @@ Comandos uteis para o cypress (utilizando o temrinal shell)
     npm init -y                                 //usado para configurar um novo pacote npm ou existente             
     npm install cypress                         //intala o cypress
     npx cypress open                            //inicia o cypress - Depois de intalados, só usa esse
+
+Dicas de CSS
+    Tag ->       $$('tag')                      exemplos: <a> <p> <li> <div> <...>
+    Classe ->    $$('.classe')                  OBS: Mais de uma classe juntas $$('.classe.classe')
+                                                Classes separadas $$('.classe .classe')
+    ID ->        $$('#id')
+    Atributos -> $$('[atributos="valor"')
+    All ->       $$('*')                        OBS: Retorna tudo
+    exemplo      $$('a[#txt]')                  Dentro da tag 'a' o id 'txt' 
+                 $$('a[abc="texto"]')           Dentro da tag 'a' o atributo 'abc' com valor 'texto'
