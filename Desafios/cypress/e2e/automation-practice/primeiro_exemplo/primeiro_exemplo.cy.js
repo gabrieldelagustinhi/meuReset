@@ -1,7 +1,9 @@
 /// <reference types="cypress" />
 /*  cenário Acessar com email válido
     dado: que tento enviar uma mensagem ao customer service
-    quando: preencho o campo Email com um email válido "NOME@DOMINIO.COM"
+    quando: preencho o campo Email com um email válido "NOME@DOMINIO.COM"This is a demo store. No orders will be fulfilled.
+
+
     Então: Retorna a mensagem: "Your message has been successfully sent our team"
 
     cenário Acessar com email inválido
