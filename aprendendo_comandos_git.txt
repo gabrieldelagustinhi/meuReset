@@ -1,0 +1,63 @@
+﻿Incluir repositorio 
+git remote add <repositorio>
+
+
+
+retirar um arquivo da area temporaria:
+git checkout -- <arquivo>
+git clean -f (apaga tudo que esta no untracked)
+
+retirar um arquivo do indice:
+git reset HEAD (apaga tudo)
+git reset HEAD <arquivo>
+
+Incluindo aruivo/pasta commitado no gitignore:
+git rm --cached <arquivo>
+git rm -r --cached <diretorio>
+
+Adicionando um arquivo a um commit anterior (apenas para desenvolvimento local):
+git commit -m "testo do commit" --amend
+
+git log --stat: indica alterações nos log
+
+adicionando arquivos ignorados no gitignore:
+git add <arquivo> -f
+
+Apagar um commit inteiro:
+git reset HEAD~1 --hard
+
+recuperando o commit excluido: 
+git reflog <char1> (copiando o cod do commit apagado)
+git merge <char1>
+
+adicionando arquivos de uma forma interativa:
+git add -i
+opção 4
+inserir numero dos arquivos que deseja adicionar
+7 quit
+
+retornando os arquivos do commit para dentro do indice:
+git reset HEAD~1 --soft
+
+salvando arquivos do indice no repositorio temporario (stash):
+git add <>
+git stash
+
+git stash list: lista as stashs realizadas
+
+git stash apply: retornando arquivos da ultima stash 
+git stash apply stash@{numero}: traz a stash solicitada
+git stash clear: limpando a lista de stach
+
+visualizando arvore dos commits:
+gitk --all &
+
+criando uma nova branch para fazer merge com master sem subir os commits desnecessarios:
+git branch temp (criando uma branch quanquer temporaria)
+git merge <branch> --squash
+git status (todas alterações devem constar no indice do branch temporario)
+git commit -m "   "
+
+git branch -D branch: apaga a branch criada
+
+parando a aula em 1:36:34
