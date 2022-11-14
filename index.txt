@@ -20,6 +20,10 @@ Comandos uteis para o cypress (utilizando o temrinal shell)
     npm install cypress                         //intala o cypress
     npx cypress open                            //inicia o cypress - Depois de intalados, só usa esse
 
+Comandos para usar BDD no cypress
+    npm install @badeball/cypress-cucumber-preprocessor
+    npm i -D cypress @bahmutov/cypress-esbuild-preprocessor esbuild
+
 Dicas de CSS
     Tag ->       $$('tag')                      exemplos: <a> <p> <li> <div> <...>
     Classe ->    $$('.classe')                  OBS: Mais de uma classe juntas $$('.classe.classe')

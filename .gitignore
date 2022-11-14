@@ -6,3 +6,8 @@
 
 # Ignore os arquivos /aula-12
 /aula-12/*
+
+# Ignore os arquivos /Coisas-enviadas
+/Coisas-enviadas/*
+
+
