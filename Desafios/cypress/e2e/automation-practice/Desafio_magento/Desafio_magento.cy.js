@@ -26,7 +26,7 @@ describe('Cadastro de Usuário', () =>{
         createAccount.Email()     //Caso queira testar com email específico, só colocar o mesmo dentro dos () entre ''
         createAccount.Password()  //Caso queira testar com senha específico, só colocar o mesmo dentro dos () entre ''
         createAccount.Create()
-        validarPage.validarText('.message-success > div','Thank you for registering with Fake Online Clothing Store.')
+        validarPage.validarText('.messages [data-bind*="(message.text)"]','Thank you for registering with Fake Online Clothing Store.')
         myAccount.acessarEditAddress()
         validarPage.validarText('.base','Add New Address')
         createAddress.Country()       //Caso queira testar com pais específico, só colocar o mesmo dentro dos () entre '', padrão 'Brazil'
@@ -36,7 +36,7 @@ describe('Cadastro de Usuário', () =>{
         createAddress.Zip()           //Caso queira testar com código postal específico, só colocar o mesmo dentro dos () entre ''
         createAddress.Phone()         //Caso queira testar com telefone específico, só colocar o mesmo dentro dos () entre ''
         createAddress.SavaAddress()
-        validarPage.validarText('div.page.messages > div:nth-child(2) > div > div > div', 'You saved the address.')
+        validarPage.validarText('.messages [data-bind*="(message.text)"]', 'You saved the address.')
         addressBook.acessarMyAccount()
         validarPage.validarContemURL('customer/account')
         validarPage.validarText('.base','My Account')
