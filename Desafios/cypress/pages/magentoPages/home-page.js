@@ -1,5 +1,5 @@
 class HomePage{
-    btnLogin = 'body > div.page-wrapper > header > div.panel.wrapper > div > ul > li:nth-child(3) > a' //'div.panel.wrapper > div > ul > li:nth-child(3) > a'
+    btnLogin = '.panel.header [href*="/account/create"]'
     url = 'https://magento.softwaretestingboard.com/'
 
     acessar(){

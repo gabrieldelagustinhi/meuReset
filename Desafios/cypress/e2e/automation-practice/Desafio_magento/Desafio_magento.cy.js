@@ -42,7 +42,7 @@ describe('Cadastro de Usuário', () =>{
         validarPage.validarText('.base','My Account')
     })
 
-    it('Teste de quebra de página', () => {
+    it.only('Teste de quebra de página', () => {
         homePage.acessar()
         validarPage.validarContemURL('magento')
         homePage.acessarCreateAnAccount()
