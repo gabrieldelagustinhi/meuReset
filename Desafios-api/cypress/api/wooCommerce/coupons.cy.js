@@ -2,6 +2,7 @@ import tokenFixture from '../../fixtures/token.json'
 import couponsFixture from '../../fixtures/coupons.json'
 import { faker } from '@faker-js/faker'
 import statusFixture from '../../fixtures/status.json'
+import couponWooCommerceSchema from '../../contracts/coupon.contract'
 
 describe('Coupons', () => {
 
@@ -9,6 +10,9 @@ describe('Coupons', () => {
     cy.getCouponsWooCommerce(tokenFixture.token).then((response) => {
       expect(response).to.exist
       expect(response.status).to.eq(statusFixture.ok)
+      for (var i=0; i <response.body.length; i++) {
+        return couponWooCommerceSchema.validateAsync(response.body[i])
+      }
     })
   })
 
@@ -30,6 +34,7 @@ describe('Coupons', () => {
       expect(response.body.individual_use).to.eq(couponsFixture.couponValido.individual_use)
       expect(response.body.exclude_sale_items).to.eq(couponsFixture.couponValido.exclude_sale_items)
       expect(response.body.minimum_amount).to.eq(couponsFixture.couponValido.minimum_amount)
+      return couponWooCommerceSchema.validateAsync(response.body)
     })
   })
 
@@ -57,11 +62,12 @@ describe('Coupons', () => {
         id
       ).then((response) => {
         expect(response.status).to.eq(statusFixture.ok)
+        return couponWooCommerceSchema.validateAsync(response.body)
       })
     })
   })
 
-  it.only('Deletar coupon', () => {
+  it('Deletar coupon', () => {
     var code = faker.datatype.uuid()
     cy.postCouponsWooCommerce(
       tokenFixture.token,
@@ -85,6 +91,7 @@ describe('Coupons', () => {
         expect(response.body.individual_use).to.eq(couponsFixture.couponValido.individual_use)
         expect(response.body.exclude_sale_items).to.eq(couponsFixture.couponValido.exclude_sale_items)
         expect(response.body.minimum_amount).to.eq(couponsFixture.couponValido.minimum_amount)
+        return couponWooCommerceSchema.validateAsync(response.body)
       })
     })
   })
