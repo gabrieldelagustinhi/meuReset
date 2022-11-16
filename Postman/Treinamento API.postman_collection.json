@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "11c820fc-7bfc-4c14-8788-09f5d7f42b65",
+		"name": "Treinamento API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24390105"
+	},
+	"item": [
+		{
+			"name": "https://treinamento-api.herokuapp.com/auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://treinamento-api.herokuapp.com/auth",
+					"protocol": "https",
+					"host": [
+						"treinamento-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://treinamento-api.herokuapp.com/booking/12",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://treinamento-api.herokuapp.com/booking/12",
+					"protocol": "https",
+					"host": [
+						"treinamento-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://treinamento-api.herokuapp.com/booking/?firstname=Gabriel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://treinamento-api.herokuapp.com/booking/?firstname=Gabriel",
+					"protocol": "https",
+					"host": [
+						"treinamento-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						""
+					],
+					"query": [
+						{
+							"key": "firstname",
+							"value": "Gabriel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://treinamento-api.herokuapp.com/booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Gabriel\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+				},
+				"url": {
+					"raw": "https://treinamento-api.herokuapp.com/booking",
+					"protocol": "https",
+					"host": [
+						"treinamento-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://treinamento-api.herokuapp.com/booking/12",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=00e484af7630de9"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+				},
+				"url": {
+					"raw": "https://treinamento-api.herokuapp.com/booking/12",
+					"protocol": "https",
+					"host": [
+						"treinamento-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://treinamento-api.herokuapp.com/booking/12",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=00e484af7630de9"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Gabriel\",\n    \"lastname\" : \"Delagustinhi\"\n}"
+				},
+				"url": {
+					"raw": "https://treinamento-api.herokuapp.com/booking/12",
+					"protocol": "https",
+					"host": [
+						"treinamento-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://treinamento-api.herokuapp.com/booking/11",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=00e484af7630de9"
+					}
+				],
+				"url": {
+					"raw": "https://treinamento-api.herokuapp.com/booking/11",
+					"protocol": "https",
+					"host": [
+						"treinamento-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

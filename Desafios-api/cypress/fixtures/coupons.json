@@ -1,0 +1,19 @@
+{
+    "couponValido": {
+        "discount_type": "percent",
+        "amount": "10.00",
+        "individual_use": true,
+        "exclude_sale_items": true,
+        "minimum_amount": "100.00"  
+    },
+    "couponEditar": {
+        "discount_type": "fixed_cart",
+        "amount": "15.00",
+        "individual_use": false,
+        "exclude_sale_items": false,
+        "minimum_amount": "200.00"  
+    },
+    "couponDeletar": {
+        "force": true
+    }
+}

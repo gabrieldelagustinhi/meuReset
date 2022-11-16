@@ -24,6 +24,10 @@ Comandos para usar BDD no cypress
     npm install @badeball/cypress-cucumber-preprocessor
     npm i -D cypress @bahmutov/cypress-esbuild-preprocessor esbuild
 
+Comandos para instalar o faker
+    npm install @faker-js/faker --save-dev
+    declara no código import { faker } from '@faker-js/faker'
+
 Dicas de CSS
     Tag ->       $$('tag')                      exemplos: <a> <p> <li> <div> <...>
     Classe ->    $$('.classe')                  OBS: Mais de uma classe juntas $$('.classe.classe')

@@ -1,4 +1,4 @@
-const { defineConfig } = require('cypress')
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   e2e: {
@@ -7,7 +7,7 @@ module.exports = defineConfig({
     },
     specPattern: 'cypress/api/**/*.{js,jsx,ts,tsx}',
     env: {
-      wooCommerce: 'http://localhost/index.php/wp-json/wc/v3*',
+      wooCommerce: 'https://cena.reset.cwi.com.br/index.php/wp-json/wc/v3',
       coupons: '/coupons'
     }
   }
