@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-17T12:46:54.500Z",
+    "end": "2022-11-17T12:47:10.341Z",
+    "duration": 15841,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b925e6b3-e057-402b-b13f-85b75ec7f246",
+      "title": "",
+      "fullFile": "cypress\\api\\wooCommerce\\coupons.cy.js",
+      "file": "cypress\\api\\wooCommerce\\coupons.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "065b9e5b-ae24-4798-929e-18dc01e85aaf",
+          "title": "Coupons",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Listar todos os coupons",
+              "fullTitle": "Coupons Listar todos os coupons",
+              "timedOut": null,
+              "duration": 3816,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getCouponsWooCommerce(_token.default.token).then(response => {\n  expect(response).to.exist;\n  expect(response.status).to.eq(_status.default.ok);\n  for (var i = 0; i < response.body.length; i++) {\n    return _coupon.default.validateAsync(response.body[i]);\n  }\n});",
+              "err": {},
+              "uuid": "d764727a-3d1f-48cf-8939-0b4bb880cd60",
+              "parentUUID": "065b9e5b-ae24-4798-929e-18dc01e85aaf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Criar coupon",
+              "fullTitle": "Coupons Criar coupon",
+              "timedOut": null,
+              "duration": 2545,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var code = _faker.faker.datatype.uuid();\ncy.postCouponsWooCommerce(_token.default.token, code, _coupons.default.couponValido.discount_type, _coupons.default.couponValido.amount, _coupons.default.couponValido.individual_use, _coupons.default.couponValido.exclude_sale_items, _coupons.default.couponValido.minimum_amount).then(response => {\n  expect(response.status).to.eq(_status.default.created);\n  expect(response.body.code).to.eq(code);\n  expect(response.body.discount_type).to.eq(_coupons.default.couponValido.discount_type);\n  expect(response.body.amount).to.eq(_coupons.default.couponValido.amount);\n  expect(response.body.individual_use).to.eq(_coupons.default.couponValido.individual_use);\n  expect(response.body.exclude_sale_items).to.eq(_coupons.default.couponValido.exclude_sale_items);\n  expect(response.body.minimum_amount).to.eq(_coupons.default.couponValido.minimum_amount);\n  return _coupon.default.validateAsync(response.body);\n});",
+              "err": {},
+              "uuid": "b65eb5c1-85f7-4012-9dfa-830f8560d0b6",
+              "parentUUID": "065b9e5b-ae24-4798-929e-18dc01e85aaf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Editar coupon",
+              "fullTitle": "Coupons Editar coupon",
+              "timedOut": null,
+              "duration": 4545,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var code = _faker.faker.datatype.uuid();\ncy.postCouponsWooCommerce(_token.default.token, code, _coupons.default.couponValido.discount_type, _coupons.default.couponValido.amount, _coupons.default.couponValido.individual_use, _coupons.default.couponValido.exclude_sale_items, _coupons.default.couponValido.minimum_amount).then(response => {\n  var codeEditar = _faker.faker.datatype.uuid();\n  var id = response.body.id;\n  cy.putCouponsWooCommerce(_token.default.token, codeEditar, _coupons.default.couponEditar.discount_type, _coupons.default.couponEditar.amount, _coupons.default.couponEditar.individual_use, _coupons.default.couponEditar.exclude_sale_items, _coupons.default.couponEditar.minimum_amount, id).then(response => {\n    expect(response.status).to.eq(_status.default.ok);\n    return _coupon.default.validateAsync(response.body);\n  });\n});",
+              "err": {},
+              "uuid": "ac3cb5f7-cfc3-481f-9626-bcfe1d452e12",
+              "parentUUID": "065b9e5b-ae24-4798-929e-18dc01e85aaf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletar coupon",
+              "fullTitle": "Coupons Deletar coupon",
+              "timedOut": null,
+              "duration": 4856,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var code = _faker.faker.datatype.uuid();\ncy.postCouponsWooCommerce(_token.default.token, code, _coupons.default.couponValido.discount_type, _coupons.default.couponValido.amount, _coupons.default.couponValido.individual_use, _coupons.default.couponValido.exclude_sale_items, _coupons.default.couponValido.minimum_amount).then(response => {\n  var id = response.body.id;\n  cy.deleteCouponsWooCommerce(_token.default.token, id, _coupons.default.couponDeletar.force).then(response => {\n    expect(response.status).to.eq(_status.default.ok);\n    expect(response.body.code).to.eq(code);\n    expect(response.body.discount_type).to.eq(_coupons.default.couponValido.discount_type);\n    expect(response.body.amount).to.eq(_coupons.default.couponValido.amount);\n    expect(response.body.individual_use).to.eq(_coupons.default.couponValido.individual_use);\n    expect(response.body.exclude_sale_items).to.eq(_coupons.default.couponValido.exclude_sale_items);\n    expect(response.body.minimum_amount).to.eq(_coupons.default.couponValido.minimum_amount);\n    return _coupon.default.validateAsync(response.body);\n  });\n});",
+              "err": {},
+              "uuid": "f407f67f-7516-4ebe-af38-1c2e9cb99154",
+              "parentUUID": "065b9e5b-ae24-4798-929e-18dc01e85aaf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d764727a-3d1f-48cf-8939-0b4bb880cd60",
+            "b65eb5c1-85f7-4012-9dfa-830f8560d0b6",
+            "ac3cb5f7-cfc3-481f-9626-bcfe1d452e12",
+            "f407f67f-7516-4ebe-af38-1c2e9cb99154"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15762,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

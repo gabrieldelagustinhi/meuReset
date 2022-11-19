@@ -1,0 +1,12 @@
+{
+    "postReview": {
+        "product_id": 22,
+        "review": "Great Samsung Chromebook Pro",
+        "reviewer": "Gabriel Delagustinhi",
+        "reviewer_email": "delagustinhigabriel@yahoo.com",
+        "rating": 3  
+    },
+    "deleteReview": {
+        "force": true
+    }
+}

@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Nov 17 10:30:31 BRT 2022","Thu Nov 17 10:30:35 BRT 2022","4697","","Coupons","","","","Editar coupon",""
+"passed","Thu Nov 17 10:30:35 BRT 2022","Thu Nov 17 10:30:40 BRT 2022","5012","","Coupons","","","","Deletar coupon",""
+"passed","Thu Nov 17 10:30:24 BRT 2022","Thu Nov 17 10:30:28 BRT 2022","4083","","Coupons","","","","Listar todos os coupons",""
+"passed","Thu Nov 17 10:30:28 BRT 2022","Thu Nov 17 10:30:31 BRT 2022","2614","","Coupons","","","","Criar coupon",""

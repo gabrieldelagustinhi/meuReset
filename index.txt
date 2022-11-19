@@ -26,7 +26,29 @@ Comandos para usar BDD no cypress
 
 Comandos para instalar o faker
     npm install @faker-js/faker --save-dev
-    declara no código import { faker } from '@faker-js/faker'
+     declara no código import { faker } from '@faker-js/faker'
+
+Comandos para adicionar o JOI
+    npm i joi --save-dev
+     declara no código const joi = require('joi')
+
+Comandos para instalar o allure report
+    npm i allure-commandline --save-dev
+
+Comandos para instalar o plugin allure no cypress
+    npm i @shelex/cypress-allure-plugin --save-dev
+ depois no cypress.config.js tem que colocar o seguinte
+    const allureWriter = require('@shelex/cypress-allure-plugin/writer'); // na parte superior
+    allureWriter(on, config);
+    return config;           // esses dois comandos dentro de setupNodeEvents(on, config){}
+ dentro de cypress/support/e2e.js colocar o seguinte
+    import '@shelex/cypress-allure-plugin'
+
+Comando para rodar o cypress com o allure já completo
+    npm i npm-run-all --save-dev
+
+Comando para gerar o mochawesome
+    npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
 
 Dicas de CSS
     Tag ->       $$('tag')                      exemplos: <a> <p> <li> <div> <...>
