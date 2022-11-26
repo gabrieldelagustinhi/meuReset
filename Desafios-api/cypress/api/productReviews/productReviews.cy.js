@@ -5,9 +5,8 @@ import productReviewsFixture from '../../fixtures/productReviews.json'
 import { faker } from '@faker-js/faker/locale/pt_BR'
 import { deleteProductReviewSchema, productReviewsSchema } from '../../contracts/productReviews.contract'
 
-
 describe('ProductReviews ', () => {
- 
+
   var review
   var reviewer
   var reviewer_email
@@ -20,7 +19,7 @@ describe('ProductReviews ', () => {
     reviewer_email = faker.internet.email(reviewer)
   })
 
-  it('Criar um product review', () => {
+  it('Criar um product review - Aceitação', () => {
     cy.postProductReview(
       tokenFixture.token,
       productReviewsFixture.postReview.product_id,
@@ -41,11 +40,29 @@ describe('ProductReviews ', () => {
         id,
         productReviewsFixture.deleteReview.force
       )
-      cy.validadeSchema(productReviewsSchema, responsePost.body)
     })
   })
 
-  it('Alterar um product review', () => {
+  it('Criar um product review - Contrato', () => {
+    cy.postProductReview(
+      tokenFixture.token,
+      productReviewsFixture.postReview.product_id,
+      review,
+      reviewer,
+      reviewer_email,
+      productReviewsFixture.postReview.rating
+    ).then((responsePost) => {
+      var id = responsePost.body.id
+      cy.validadeSchema(productReviewsSchema, responsePost.body)
+      cy.deleteProductReview(
+        tokenFixture.token,
+        id,
+        productReviewsFixture.deleteReview.force
+      )
+    })
+  })
+
+  it('Alterar um product review - Aceitação', () => {
     cy.postProductReview(
       tokenFixture.token,
       productReviewsFixture.postReview.product_id,
@@ -70,14 +87,37 @@ describe('ProductReviews ', () => {
           id,
           productReviewsFixture.deleteReview.force
         )
-        return productReviewsSchema.validateAsync(responsePut.body)
-        //cy.validadeSchema(productReviewsSchema, responsePut.body)
       })
     })
   })
 
+  it('Alterar um product review - Contrato', () => {
+    cy.postProductReview(
+      tokenFixture.token,
+      productReviewsFixture.postReview.product_id,
+      review,
+      reviewer,
+      reviewer_email,
+      productReviewsFixture.postReview.rating
+    ).then((responsePost) => {
+      var id = responsePost.body.id
+      cy.putProductReview(
+        tokenFixture.token,
+        reviewNew,
+        rating,
+        id
+      ).then((responsePut) => {
+        cy.validadeSchema(productReviewsSchema, responsePut.body)
+        cy.deleteProductReview(
+          tokenFixture.token,
+          id,
+          productReviewsFixture.deleteReview.force
+        )
+      })
+    })
+  })
 
-  it('Deletar um product review', () => {
+  it('Deletar um product review - Aceitação', () => {
     cy.postProductReview(
       tokenFixture.token,
       productReviewsFixture.postReview.product_id,
@@ -97,6 +137,26 @@ describe('ProductReviews ', () => {
         expect(responseDel.status).to.eq(statusFixture.ok)
         expect(responseDel.body.deleted).to.eq(force)
         expect(responseDel.body.previous.id).to.eq(id)
+      })
+    })
+  })
+
+  it('Deletar um product review - Contrato', () => {
+    cy.postProductReview(
+      tokenFixture.token,
+      productReviewsFixture.postReview.product_id,
+      review,
+      reviewer,
+      reviewer_email,
+      productReviewsFixture.postReview.rating
+    ).then((responsePost) => {
+      var id = responsePost.body.id
+      var force = true
+      cy.deleteProductReview(
+        tokenFixture.token,
+        id,
+        productReviewsFixture.deleteReview.force
+      ).then((responseDel) => {
         cy.validadeSchema(deleteProductReviewSchema, responseDel.body)
       })
     })
